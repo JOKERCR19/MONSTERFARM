@@ -1,7 +1,7 @@
 let balance = 100;
 let monster = null;
 let earningsInterval;
-const isAdmin = true;  // Cambia a `true` para activar modo administrador, `false` para desactivar
+const isAdmin = true;  // Cambia a `true` para activar modo administrador
 
 let monsters = [
     { type: "Común", image: "monster-common.png", health: 100, earnings: 2 },
@@ -86,7 +86,6 @@ function log(message) {
     logDiv.innerHTML = `<p>${message}</p>` + logDiv.innerHTML;
 }
 
-// Función para reiniciar las estadísticas del administrador
 function resetAdmin() {
     if (isAdmin) {
         balance = 100;
@@ -94,6 +93,4 @@ function resetAdmin() {
         clearInterval(earningsInterval);
         document.getElementById("balance").textContent = balance;
         document.getElementById("monster-container").style.display = "none";
-        log("Estadísticas de administrador reiniciadas para pruebas.");
-    }
-}
+        log("
