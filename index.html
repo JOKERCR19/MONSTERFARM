@@ -18,8 +18,10 @@
     </header>
 
     <main>
-        <button onclick="buyBox()">Comprar Caja (50 monedas)</button>
-        <button id="admin-reset" onclick="resetAdmin()">Reiniciar Mis Pruebas (Admin)</button>
+        <div id="button-container">
+            <button onclick="buyBox()">Comprar Caja (50 monedas)</button>
+            <button id="admin-reset" onclick="resetAdmin()">Reiniciar Mis Pruebas (Admin)</button>
+        </div>
         
         <div id="monster-container" style="display: none;">
             <div id="monster-card" class="monster-card">
@@ -30,8 +32,10 @@
                     <div id="health-fill" class="health-fill"></div>
                 </div>
                 <p>Generación: <span id="earnings">0</span> monedas</p>
-                <button onclick="feedMonster()">Alimentar</button>
-                <button onclick="cureMonster()">Curar (5 monedas)</button>
+                <div id="actions">
+                    <button onclick="feedMonster()">Alimentar</button>
+                    <button onclick="cureMonster()">Curar (5 monedas)</button>
+                </div>
             </div>
         </div>
         
