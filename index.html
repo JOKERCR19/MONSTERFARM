@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fondo de la página -->
     <div class="background">
         <img src="background.jpg" alt="Bosque mítico" class="bg-image">
     </div>
@@ -15,27 +14,27 @@
     <header>
         <h1>MonsterFarm</h1>
         <p>Cuida a tus monstruos y gana recompensas diarias</p>
+        <p>Saldo: <span id="balance">100</span> monedas</p>
     </header>
 
-    <!-- Contenedor para los monstruos (permite 3 monstruos) -->
     <main>
-        <div id="monster-grid">
-            <div class="monster-card">
-                <img src="monster-common.png" alt="Monstruo Común" class="monster-image" id="monster1">
-                <p>Salud: <span id="health1">100</span>%</p>
-                <p>Tipo: Común</p>
-            </div>
-            <div class="monster-card">
-                <img src="monster-rare.png" alt="Monstruo Raro" class="monster-image" id="monster2">
-                <p>Salud: <span id="health2">100</span>%</p>
-                <p>Tipo: Raro</p>
-            </div>
-            <div class="monster-card">
-                <img src="monster-legendary.png" alt="Monstruo Legendario" class="monster-image" id="monster3">
-                <p>Salud: <span id="health3">100</span>%</p>
-                <p>Tipo: Legendario</p>
+        <button onclick="buyBox()">Comprar Caja (50 monedas)</button>
+        <button id="admin-reset" onclick="resetAdmin()">Reiniciar Mis Pruebas (Admin)</button>
+        
+        <div id="monster-container" style="display: none;">
+            <div id="monster-card" class="monster-card">
+                <img src="" alt="Monstruo" class="monster-image" id="monster-image">
+                <p>Salud: <span id="health">100</span>%</p>
+                <p id="monster-type">Tipo: -</p>
+                <div class="health-bar">
+                    <div id="health-fill" class="health-fill"></div>
+                </div>
+                <p>Generación: <span id="earnings">0</span> monedas</p>
+                <button onclick="feedMonster()">Alimentar</button>
+                <button onclick="cureMonster()">Curar (5 monedas)</button>
             </div>
         </div>
+        
         <div id="log"></div>
     </main>
 
