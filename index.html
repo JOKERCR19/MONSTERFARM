@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonsterFarm</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MonsterFarm - JokerGames</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="game-container">
+    <div class="background"></div> <!-- Fondo animado -->
+    <header>
         <h1>MonsterFarm</h1>
-        <p>Gestiona tus monstruos y recolecta ganancias con JokerGames.</p>
-        <div id="monsterContainer"></div>
-        <button onclick="addMonster()">Añadir Monstruo</button>
-        <button onclick="retirar()">Retirar Ganancias</button>
-    </div>
+        <p>Cuida a tus monstruos y gana recompensas diarias</p>
+    </header>
+
+    <main>
+        <div id="monster-card">
+            <img src="monster.png" alt="Monstruo" class="monster-image">
+            <h2>Tu Monstruo</h2>
+            <div class="health-bar">
+                <div id="health-fill" class="health-fill"></div>
+            </div>
+            <p>Salud: <span id="health">100</span>%</p>
+            <p>Saldo: <span id="balance">0</span> TON</p>
+            <div class="actions">
+                <button onclick="buyMonster()">Comprar Monstruo</button>
+                <button onclick="feedMonster()">Alimentar</button>
+                <button onclick="cureMonster()">Curar</button>
+                <button onclick="withdraw()">Retirar</button>
+            </div>
+        </div>
+        <div id="log"></div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>

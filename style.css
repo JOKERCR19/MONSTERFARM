@@ -1,36 +1,74 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Efectos de Fondo */
+body, html {
     margin: 0;
-    background-color: #f0f4f8;
-}
-
-.game-container {
-    width: 350px;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #f4f4f9;
     text-align: center;
-    padding: 20px;
-    background: #fff;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #141e30, #243b55);
+    z-index: -1;
+}
+
+header {
+    color: #ffeb3b;
+    margin: 20px 0;
+}
+
+#monster-card {
+    background: #222;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
 }
 
-button {
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
+.monster-image {
+    width: 100px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.health-bar {
+    background: #444;
     border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.health-fill {
+    height: 20px;
+    width: 100%;
+    background: #4caf50;
+    transition: width 0.5s;
+}
+
+.actions button {
+    background-color: #ff5722;
     border: none;
-    background-color: #4CAF50;
     color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.animal {
-    margin: 15px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+.actions button:hover {
+    background-color: #e64a19;
+    transform: scale(1.1);
 }
